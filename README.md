@@ -1,18 +1,17 @@
-# Simple shell project for <a href="https://www.holbertonschool.com/">Holberton School</a>.
-
-A simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.
+# Simple Shell Project for <a href="https://www.holbertonschool.com/">Holberton School</a>
+A simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.  
 
 ## Installation
 All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
 
 **Clone repo**:
-`$ git clone https://github.com/KRLoyd/simple_shell.git`
+``$ git clone https://github.com/KRLoyd/simple_shell.git``
 
 **Run simple_shell**:
-`./simple_shell`
+``$ ./simple_shell``
 
 A prompt will follow upon running `./simple_shell`. Simple_shell is ready to take commands.
-`$`
+``$ ``
 
 
 ## Allowed Functions
