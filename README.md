@@ -2,7 +2,7 @@
 
 A simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.
 
-##Installation
+## Installation
 All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
 
 **Clone repo**:
@@ -58,4 +58,4 @@ _exit (man 2 _exit)
 - [strlen_rec](strlen_rec.c) - finds the length of a string
 - [tokenizer](tokenizer.c) - splits a character string into an array of tokens
 
-##Usage
+## Usage
