@@ -4,14 +4,14 @@ A simple UNIX command line interpreter(in **C** ) that reads and implements basi
 ## Installation
 All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
 
-**Clone repo**:
-```$ git clone https://github.com/KRLoyd/simple_shell.git```
+**Clone repo**:  
+`$ git clone https://github.com/KRLoyd/simple_shell.git`   
 
-**Run simple_shell**:
-```$ ./simple_shell```
+**Run simple_shell**:  
+`$ ./simple_shell`   
 
 A prompt will follow upon running `./simple_shell`. Simple_shell is ready to take commands.
-```$ ```
+`$ `   
 
 
 ## Allowed Functions
@@ -48,6 +48,8 @@ _exit (man 2 _exit)
 
 ## File Descriptions
 [shell.h](shell.h) - header file containing function prototypes, struct definitions, macros, standard libraries.
+[simple_shell](simple_shell.c) - simple shell program that 1) checks if in interactice/noninteractice mode 2) prints prompt and waits for user input 3) splits user input into an array 4) prints prompt again if in interactice mode
+
 **BUILTINS**
 
 
