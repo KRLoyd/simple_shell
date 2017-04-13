@@ -39,8 +39,6 @@ int main(void)
 /* if interactive mode, print prompt again */
 		if (non == 0)
 			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
-		if (non == 1)
-			write(STDOUT_FILENO, PROMPT2, strlen_rec(PROMPT2));
 	}
 	free(user_input);
 	return (0);
