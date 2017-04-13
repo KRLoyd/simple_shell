@@ -6,6 +6,5 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #define PROMPT "($) "
-#define PROMPT2 "$\n"
 int strlen_rec(char *s);
  #endif /* __JKSHELL__ */
