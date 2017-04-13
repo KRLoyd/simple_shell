@@ -24,7 +24,8 @@ int main(void)
 /* check if in non-interactive mode */
 	switch (stats.st_mode & S_IFMT)
 	{
-	case S_IFIFO: non = 1;
+	case S_IFIFO:
+		non = 1;
 		break;
 	}
 /* if interactive mode, print prompt*/
@@ -36,7 +37,7 @@ int main(void)
 	while ((get_res = getline(&user_input, &input_size, stdin)) != -1)
 	{
 		if (get_res < 0)
-	       		break;
+			break;
 /* split user_input into an array */
 		args = tokenizer(user_input);
 		for (i = 0; args[i] != NULL; i++)
@@ -45,6 +46,5 @@ int main(void)
 		if (non == 0)
 			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
 	}
-	free(user_input);
-	return (0);
+	free(user_input); return (0);
 }
