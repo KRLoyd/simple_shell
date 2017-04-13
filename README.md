@@ -10,8 +10,9 @@ All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
 **Run simple_shell**:  
 `$ ./simple_shell`   
 
-A prompt will follow upon running `./simple_shell`. Simple_shell is ready to take commands.
-`$ `   
+A prompt will follow upon running `./simple_shell` <br />  
+Simple_shell is ready to take commands. <br />  
+`$ ` 
 
 
 ## Allowed Functions
@@ -48,6 +49,7 @@ _exit (man 2 _exit)
 
 ## File Descriptions
 [shell.h](shell.h) - header file containing function prototypes, struct definitions, macros, standard libraries.
+
 [simple_shell](simple_shell.c) - simple shell program that 1) checks if in interactice/noninteractice mode 2) prints prompt and waits for user input 3) splits user input into an array 4) prints prompt again if in interactice mode
 
 **BUILTINS**
