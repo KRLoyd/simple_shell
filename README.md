@@ -10,8 +10,8 @@ All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
 **Run simple_shell**:  
 `$ ./simple_shell`   
 
-A prompt will follow upon running `./simple_shell` <br />  
-Simple_shell is ready to take commands. <br />  
+A prompt will follow upon running `./simple_shell` <br /> 
+Simple_shell is ready to take commands. <br /> 
 `$ ` 
 
 
