@@ -10,7 +10,8 @@ int main(void)
 	size_t input_size;
 	struct stat stats;
 	int get_res, non;
-
+	char **args;
+	int i;
 
 	user_input = NULL;
 	non = 0;
@@ -36,6 +37,10 @@ int main(void)
 	{
 		if (get_res < 0)
 	       		break;
+/* split user_input into an array */
+		args = tokenizer(user_input);
+		for (i = 0; args[i] != NULL; i++)
+			printf("args[%d]: %s\n", i, args[i]);
 /* if interactive mode, print prompt again */
 		if (non == 0)
 			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
