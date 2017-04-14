@@ -5,7 +5,6 @@
  *
  * Return: pointer to the variable (SUCCESS), NULL (FAILURE)
  */
-extern char **environ;
 char *_getenv(const char *name)
 {
 	char *env_value;

@@ -1,6 +1,6 @@
 #include "shell.h"
 /**
- * main - create a linked list of directories in PATH
+ * link_path - create a linked list of directories in PATH
  *
  * Return: pointer to the first element in the list (SUCCESS), NULL (FAILURE)
  */
@@ -22,7 +22,7 @@ list_t *link_path(void)
 	{
 		if (dir == NULL)
 			break;
-		else /* dir != NULL */
+		/* else  dir != NULL */
 		{
 			add_result = add_node_end(&head, dir);
 			if (add_result == NULL)

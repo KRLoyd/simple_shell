@@ -6,12 +6,14 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#define ENV extern char **environ
 #define PROMPT "($) "
 #define BUFSIZE 1024
-#define ENV extern char **environ
+
+extern char **environ;
 /**
  * struct list_s - singly linked list
- * @str; string - (malloc'ed string)
+ * @str: string - (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
  */
