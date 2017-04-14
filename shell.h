@@ -20,7 +20,7 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
-extern char **environ
+extern char **environ;
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
 char *_getenv(const char *name);
