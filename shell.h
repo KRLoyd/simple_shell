@@ -8,10 +8,9 @@
 #include <sys/stat.h>
 #define PROMPT "($) "
 #define BUFSIZE 1024
-#define ENV extern char **environ
 /**
  * struct list_s - singly linked list
- * @str; string - (malloc'ed string)
+ * @str: string - (malloc'ed string)
  * @len: length of the string
  * @next: points to the next node
  */
@@ -21,6 +20,7 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
+extern char **environ
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
 char *_getenv(const char *name);
