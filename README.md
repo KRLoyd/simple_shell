@@ -4,15 +4,15 @@ A simple UNIX command line interpreter(in **C** ) that reads and implements basi
 ## Installation
 All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
 
-**Clone repo**:  
-`$ git clone https://github.com/KRLoyd/simple_shell.git`   
+**Clone repo**:
+`$ git clone https://github.com/KRLoyd/simple_shell.git`
 
-**Run simple_shell**:  
-`$ ./simple_shell`   
+**Run simple_shell**:
+`$ ./simple_shell`
 
-A prompt will follow upon running `./simple_shell` <br /> 
-Simple_shell is ready to take commands. <br /> 
-`$ ` 
+A prompt will follow upon running `./simple_shell` <br />
+Simple_shell is ready to take commands: <br />
+`$  `
 
 
 ## Allowed Functions

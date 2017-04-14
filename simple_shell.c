@@ -12,6 +12,8 @@ int main(void)
 	int get_res, non;
 	char **args;
 	int i;
+	char *search_res;
+	list_t *linked_path;
 
 	user_input = NULL;
 	non = 0;
@@ -42,6 +44,21 @@ int main(void)
 		args = tokenizer(user_input);
 		for (i = 0; args[i] != NULL; i++)
 			printf("args[%d]: %s\n", i, args[i]);
+/* create linked list from PATH */
+		linked_path = link_path();
+		if (linked_path == NULL)
+		{
+			putstring("Unable to create linked list from PATH");
+			return (-1);
+		}
+/* search for args[0] in PATH */
+		search_res = search_path(args[0], linked_path);
+		if (search_res == NULL)
+		{
+			putstring("Unable to search PATH");
+			return (-1);
+		}
+		printf("search_res: %s\n", search_res);
 /* if interactive mode, print prompt again */
 		if (non == 0)
 			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
