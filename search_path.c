@@ -15,19 +15,16 @@ char *search_path(char *str, list_t *list)
 
 	liststr = malloc(sizeof(char) * BUFSIZE);
 	if (liststr == NULL)
-	{
 		perror("liststr malloc\n"); return (NULL);
-	}
+
 	half_path = malloc(sizeof(char) * BUFSIZE);
 	if (half_path == NULL)
-	{
 		perror("half_path malloc\n"); return (NULL);
-	}
+
 	full_path = malloc(sizeof(char) * BUFSIZE);
 	if (full_path == NULL)
-	{
 		perror("full_path malloc\n"); return (NULL);
-	}
+
 	while (list != NULL)
 	{
 		clear_buff(full_path);
