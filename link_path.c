@@ -32,5 +32,6 @@ list_t *link_path(void)
 		}
 		dir = strtok(NULL, ":");
 	}
+	free(add_result);
 	return (head);
 }
