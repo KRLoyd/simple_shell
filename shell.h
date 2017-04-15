@@ -6,6 +6,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <sys/wait.h>
 #define PROMPT "($) "
 #define BUFSIZE 1024
 /**
@@ -23,6 +24,7 @@ typedef struct list_s
 extern char **environ;
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
+void execution(char *str, char **args);
 void free_dblpt_char(char **to_free);
 void free_linked_path(list_t *list);
 char *_getenv(const char *name);

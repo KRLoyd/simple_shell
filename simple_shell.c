@@ -52,8 +52,8 @@ int main(void)
 		{
 			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
 			}
-/* split user_input into an array */
 		else/* (newline != 0)*/
+/* split user_input into an array */
 		{
 			args = tokenizer(user_input);
 			for (i = 0; args[i] != NULL; i++)
@@ -65,6 +65,8 @@ int main(void)
 				putstring("Unable to search PATH");
 				return (-1);
 			}
+/* Execute search_res */
+			execution(search_res, args);
 /* if interactive mode, print prompt again */
 			if (non == -1)
 				write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
