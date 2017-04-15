@@ -10,6 +10,7 @@ char **tokenizer(char *s)
 	int i, j;
 	char *token;
 	char **av;
+	char **temp;
 	char *delim;
 
 	i = 0;
@@ -31,5 +32,7 @@ char **tokenizer(char *s)
 		token = strtok(NULL, delim);
 	}
 	av[i] = NULL;
-	return (av);
+	temp = av;
+	free(av);
+	return (temp);
 }
