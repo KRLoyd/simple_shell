@@ -59,9 +59,9 @@ int main(void)
 			return (-1);
 		}
 		printf("search_res: %s\n", search_res);
+/* free linked_path, args, search_res */
 		free_linked_path(linked_path);
-		free(args);
-
+		free_dblpt_char(args);
 		free(search_res);
 /* if interactive mode, print prompt again */
 		if (non == 0)
