@@ -13,7 +13,7 @@ void free_linked_path(list_t *list)
 	{
 		temp = list;
 		list = list->next;
-/**		free(temp->str);**/
+		free(temp->str);
 		free(temp);
 	}
 	free(list);
