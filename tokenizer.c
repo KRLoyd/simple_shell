@@ -10,11 +10,10 @@ char **tokenizer(char *s)
 	int i, j;
 	char *token;
 	char **av;
-	char **temp;
 	char *delim;
 
 	i = 0;
-	delim = " \t\n";
+	delim = " \t\n\r";
 
 	av = malloc(sizeof(char) * BUFSIZE);
 	if (av == NULL)
@@ -32,7 +31,5 @@ char **tokenizer(char *s)
 		token = strtok(NULL, delim);
 	}
 	av[i] = NULL;
-	temp = av;
-	free(av);
-	return (temp);
+	return (av);
 }
