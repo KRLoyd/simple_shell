@@ -34,12 +34,12 @@ int main(void)
 	if (non == 0)
 	{
 		write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
-	}
+		}
 /* get user input */
 	while ((get_res = getline(&user_input, &input_size, stdin)) != -1)
 	{
-		if (get_res < 0)
-			break;
+/**		if (get_res < 0)
+		break;**/
 /* split user_input into an array */
 		args = tokenizer(user_input);
 		for (i = 0; args[i] != NULL; i++)
@@ -59,9 +59,14 @@ int main(void)
 			return (-1);
 		}
 		printf("search_res: %s\n", search_res);
+/* free linked_path, args, search_res */
+		free_linked_path(linked_path);
+		free_dblpt_char(args);
+		free(search_res);
 /* if interactive mode, print prompt again */
 		if (non == 0)
 			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
-	}
-	free(user_input); return (0);
+}
+	free(user_input);
+	return (0);
 }

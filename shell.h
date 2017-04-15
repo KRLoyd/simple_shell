@@ -23,6 +23,8 @@ typedef struct list_s
 extern char **environ;
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
+void free_dblpt_char(char **to_free);
+void free_linked_path(list_t *list);
 char *_getenv(const char *name);
 list_t *link_path(void);
 int _putchar(char c);
