@@ -9,7 +9,6 @@
 char *search_path(char *str, list_t *list)
 {
 	char *liststr;
-	char *result;
 	int access_res;
 
 	liststr = malloc(sizeof(char) * BUFSIZE);
@@ -39,9 +38,7 @@ char *search_path(char *str, list_t *list)
 			access_res = access(liststr, X_OK);
 			if (access_res == 0)
 			{
-				result = liststr;
-				free(liststr);
-				return (result);
+				return (liststr);
 			}
 		}
 		list = list->next;

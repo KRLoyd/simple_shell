@@ -8,6 +8,7 @@
 #include <sys/stat.h>
 #include <sys/wait.h>
 #define PROMPT "($) "
+#define PRSIZE strlen_rec(PROMPT)
 #define BUFSIZE 1024
 /**
  * struct list_s - singly linked list
@@ -35,6 +36,7 @@ char *search_path(char *str, list_t *list);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 int strlen_rec(char *s);
+int _strcmp(char *s1, char *s2);
 int _strncmp(char *s1, char *s2, unsigned int n);
 char **tokenizer(char *s);
 #endif /* __JKSHELL__ */
