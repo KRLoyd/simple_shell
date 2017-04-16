@@ -15,7 +15,7 @@ list_t *link_path(void)
 	to_link = _getenv("PATH");
 	if (to_link == NULL)
 	{
-		putstring("Unable to link path\n"); return (NULL);
+		perror("Unable to link path\n"); return (NULL);
 	}
 	dir = strtok(to_link, ":");
 	while (to_link != NULL)
@@ -27,7 +27,7 @@ list_t *link_path(void)
 			add_result = add_node_end(&head, dir);
 			if (add_result == NULL)
 			{
-				putstring("Unable to add node\n"); return (NULL);
+				perror("Unable to add node\n"); return (NULL);
 			}
 		}
 		dir = strtok(NULL, ":");
