@@ -27,7 +27,6 @@ char *search_path(char *str, list_t *list)
 			return (NULL);
 		}
 		liststr = _strcat(liststr, str);
-		printf("full_path: %s\n", liststr);
 		if (liststr == NULL)
 		{
 			putstring("Error concatenating to liststr\n");

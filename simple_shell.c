@@ -11,7 +11,6 @@ int main(void)
 	struct stat stats;
 	int get_res, non;
 	char **args;
-	int i;
 	char *search_res;
 	list_t *linked_path;
 
@@ -56,8 +55,6 @@ int main(void)
 /* split user_input into an array */
 		{
 			args = tokenizer(user_input);
-			for (i = 0; args[i] != NULL; i++)
-				printf("args[%d]: %s\n", i, args[i]);
 /* search for args[0] in PATH */
 			search_res = search_path(args[0], linked_path);
 			if (search_res == NULL)
