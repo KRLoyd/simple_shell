@@ -8,7 +8,20 @@
 #include <sys/stat.h>
 #define PROMPT "($) "
 #define BUFSIZE 1024
-#define ENV extern char **environ
+
+extern char **environ;
+
+/**
+ * struct builtins_s - struct for builtins
+ * @s: pointer to user-inputed commands
+ * @fcn: pointer to corresponding command function
+ */
+typedef struct builtins_s
+{
+	char *s;
+	void (*fcn)();
+}builtins_t;
+
 /**
  * struct list_s - singly linked list
  * @str; string - (malloc'ed string)
@@ -21,6 +34,8 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
+
+
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
 char *_getenv(const char *name);
