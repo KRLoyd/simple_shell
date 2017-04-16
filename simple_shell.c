@@ -32,25 +32,17 @@ int main(void)
 		exit(EXIT_FAILURE);
 	}
 /* check if in non-interactive mode */
-	switch (stats.st_mode & S_IFMT)
-	{
-	case S_IFIFO:
+	if ((stats.st_mode & S_IFMT) == S_IFIFO)
 		non = 0;
-		break;
-	}
 /* if interactive mode, print prompt*/
 	if (non == -1)
-	{
 		write(STDOUT_FILENO, PROMPT, PRSIZE);
-	}
 /* START OF INFINITE LOOP */
 /*get user input */
 	while ((get_res = getline(&user_input, &input_size, stdin)) != -1)
 	{
 		if (_strncmp(user_input, "\n", 1) == 0)
-		{
 			write(STDOUT_FILENO, PROMPT, PRSIZE);
-			}
 		else/* (newline != 0)*/
 /* split user_input into an array */
 		{
@@ -65,9 +57,9 @@ int main(void)
 /* Execute search_res */
 			execution(search_res, args);
 /* free search_res and args */
-		   if (_strcmp(search_res, user_input) != 0)
-	       		free(search_res);
-		   free(args);
+			if (_strcmp(search_res, user_input) != 0)
+				free(search_res);
+			free(args);
 /* if interactive mode, print prompt again */
 			if (non == -1)
 				write(STDOUT_FILENO, PROMPT, PRSIZE);
