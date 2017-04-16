@@ -22,7 +22,7 @@ int main(void)
 		linked_path = link_path();
 		if (linked_path == NULL)
 		{
-			putstring("Unable to create linked list from PATH");
+			perror("Unable to create linked list from PATH");
 			return (-1);
 		}
 /* check status of mode */
@@ -51,7 +51,7 @@ int main(void)
 			search_res = search_path(args[0], linked_path);
 			if (search_res == NULL)
 			{
-				putstring("Unable to search PATH");
+				perror("Unable to search PATH");
 				return (-1);
 			}
 /* Execute search_res */
