@@ -11,7 +11,7 @@ void execution(char *str, char **args)
 	pid = fork();
 	if (pid == 0) /* child */
 	{
-		if (execve(str, args, NULL) == -1)
+		if (execve(str, args, environ) == -1)
 			perror("execve error:\\n");
 	}
 	else /* parent */
