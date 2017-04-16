@@ -17,8 +17,8 @@ int main(void)
 
 	user_input = NULL;
 	args = NULL;
+	search_res = NULL;
 	non = -1;
-
 /* create linked list from PATH */
 		linked_path = link_path();
 		if (linked_path == NULL)
@@ -42,18 +42,18 @@ int main(void)
 /* if interactive mode, print prompt*/
 	if (non == -1)
 	{
-		write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
+		write(STDOUT_FILENO, PROMPT, PRSIZE);
 	}
-	
-/* get user input */
+/* START OF INFINITE LOOP */
+/*get user input */
 	while ((get_res = getline(&user_input, &input_size, stdin)) != -1)
 	{
 		if (_strncmp(user_input, "\n", 1) == 0)
 		{
-			write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
+			write(STDOUT_FILENO, PROMPT, PRSIZE);
 			}
-/* split user_input into an array */
 		else/* (newline != 0)*/
+/* split user_input into an array */
 		{
 			args = tokenizer(user_input);
 			for (i = 0; args[i] != NULL; i++)
@@ -65,13 +65,19 @@ int main(void)
 				putstring("Unable to search PATH");
 				return (-1);
 			}
+/* Execute search_res */
+			execution(search_res, args);
+/* free search_res and args */
+		   if (_strcmp(search_res, user_input) != 0)
+	       		free(search_res);
+		   free(args);
 /* if interactive mode, print prompt again */
 			if (non == -1)
-				write(STDOUT_FILENO, PROMPT, strlen_rec(PROMPT));
+				write(STDOUT_FILENO, PROMPT, PRSIZE);
 		}
 	}
-	free_linked_path(linked_path);
+/*free user_input and linked_path */
 	free(user_input);
-	free(args);
+	free_linked_path(linked_path);
 	return (0);
 }
