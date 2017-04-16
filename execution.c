@@ -11,13 +11,11 @@ void execution(char *str, char **args)
 	pid = fork();
 	if (pid == 0) /* child */
 	{
-		printf("child created\n");
 		if (execve(str, args, NULL) == -1)
 			perror("execve error:\\n");
 	}
 	else /* parent */
 	{
 		wait(&status);
-		printf("Child terminated\n");
 	}
 }
