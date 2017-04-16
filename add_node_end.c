@@ -15,7 +15,7 @@ list_t *add_node_end(list_t **head, char *str)
 	new_last = malloc(sizeof(list_t));
 	if (new_last == NULL)
 	{
-		putstring("Couldn't malloc for new_last\n");
+		perror("Couldn't malloc for new_last\n");
 		return (NULL);
 	}
 	new_last->str = str;
