@@ -18,7 +18,8 @@ char **tokenizer(char *s)
 	av = malloc(sizeof(char) * BUFSIZE);
 	if (av == NULL)
 	{
-		putstring("Error: Could not malloc space for tokens\n");
+		perror("Error: Could not malloc space for tokens\n");
+		return (NULL);
 	}
 	token = strtok(s, delim);
 	for (i = 0; token != NULL; i++)
