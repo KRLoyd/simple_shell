@@ -23,13 +23,13 @@ char *search_path(char *str, list_t *list)
 		liststr = _strcat(liststr, "/");
 		if (liststr == NULL)
 		{
-			putstring("Error concatenating to liststr\n");
+			perror("Error concatenating to liststr\n");
 			return (NULL);
 		}
 		liststr = _strcat(liststr, str);
 		if (liststr == NULL)
 		{
-			putstring("Error concatenating to liststr\n");
+			perror("Error concatenating to liststr\n");
 			return (NULL);
 		}
 		else
