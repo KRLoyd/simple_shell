@@ -31,9 +31,15 @@ list_t *add_node_end(list_t **head, char *str)
 		*head = new_last;
 		return (new_last);
 	}
+<<<<<<< HEAD
 
 	while (temp->next != NULL)
 		temp = temp->next;
         temp->next = new_last;
+=======
+	while (temp->next != NULL)
+		temp = temp->next;
+	temp->next = new_last;
+>>>>>>> 178cd30787b263c1cd5f32ede720c76ba68c9a65
 	return (new_last);
 }
