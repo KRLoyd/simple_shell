@@ -27,11 +27,7 @@ list_t *link_path(void)
 			add_result = add_node_end(&head, dir);
 			if (add_result == NULL)
 			{
-<<<<<<< HEAD
 				perror("Unable to add node\n"); return (NULL);
-=======
-				putstring("Unable to add node\n"); return (NULL);
->>>>>>> 178cd30787b263c1cd5f32ede720c76ba68c9a65
 			}
 		}
 		dir = strtok(NULL, ":");
