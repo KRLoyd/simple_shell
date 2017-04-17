@@ -1,0 +1,17 @@
+.TH man 1 "APR 15  2017" "1.0" "Holberton Simple Shell Project"
+.SH NAME
+- Simple_shell(hsh) -
+
+.SH SYNOPSIS
+.B ./hsh or ... [command][argument...]
+
+.SH DESCRIPTION
+
+.SH BUILTINS
+
+.SH EXIT STATUS
+
+.SH BUGS
+
+.SH AUTHORS
+.B Kristen Loyd, Jennifer Huang.
