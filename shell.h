@@ -6,11 +6,19 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+<<<<<<< HEAD
 #define ENV extern char **environ
+=======
+#include <sys/wait.h>
+>>>>>>> 8f206bd1d9ac75f0792bdac2aafd6605e3ece02b
 #define PROMPT "($) "
+#define PRSIZE strlen_rec(PROMPT)
 #define BUFSIZE 1024
+<<<<<<< HEAD
 
 extern char **environ;
+=======
+>>>>>>> 8f206bd1d9ac75f0792bdac2aafd6605e3ece02b
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -23,8 +31,12 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
+extern char **environ;
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
+void execution(char *str, char **args);
+void free_dblpt_char(char **to_free);
+void free_linked_path(list_t *list);
 char *_getenv(const char *name);
 list_t *link_path(void);
 int _putchar(char c);
@@ -33,6 +45,7 @@ char *search_path(char *str, list_t *list);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
 int strlen_rec(char *s);
+int _strcmp(char *s1, char *s2);
 int _strncmp(char *s1, char *s2, unsigned int n);
 char **tokenizer(char *s);
 #endif /* __JKSHELL__ */

@@ -8,14 +8,13 @@
  */
 char *search_path(char *str, list_t *list)
 {
-	char *half_path;
-	char *full_path;
 	char *liststr;
 	int access_res;
 
 	liststr = malloc(sizeof(char) * BUFSIZE);
 	if (liststr == NULL)
 		perror("liststr malloc\n"); return (NULL);
+<<<<<<< HEAD
 
 	half_path = malloc(sizeof(char) * BUFSIZE);
 	if (half_path == NULL)
@@ -25,34 +24,35 @@ char *search_path(char *str, list_t *list)
 	if (full_path == NULL)
 		perror("full_path malloc\n"); return (NULL);
 
+=======
+	}
+>>>>>>> 8f206bd1d9ac75f0792bdac2aafd6605e3ece02b
 	while (list != NULL)
 	{
-		clear_buff(full_path);
-		clear_buff(half_path);
 		clear_buff(liststr);
 		liststr = _strcpy(liststr, list->str);
-		half_path = _strcat(liststr, "/");
-		if (half_path == NULL)
+		liststr = _strcat(liststr, "/");
+		if (liststr == NULL)
 		{
-			putstring("Error concatenating to half_path\n");
+			perror("Error concatenating to liststr\n");
 			return (NULL);
 		}
-		full_path = _strcat(half_path, str);
-		printf("full_path: %s\n", full_path);
-		if (full_path == NULL)
+		liststr = _strcat(liststr, str);
+		if (liststr == NULL)
 		{
-			putstring("Error concatenating to full_path\n");
+			perror("Error concatenating to liststr\n");
 			return (NULL);
 		}
 		else
 		{
-			access_res = access(full_path, X_OK);
+			access_res = access(liststr, X_OK);
 			if (access_res == 0)
 			{
-				return (full_path);
+				return (liststr);
 			}
 		}
 		list = list->next;
 	}
+	free(liststr);
 	return (str);
 }
