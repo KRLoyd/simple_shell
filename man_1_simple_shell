@@ -6,9 +6,7 @@
 .B ./hsh or ... [command][argument...]
 
 .SH DESCRIPTION
-
-.SH BUILTINS
-
+Simple Shell is a simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.
 .SH EXIT STATUS
 
 .SH BUGS
