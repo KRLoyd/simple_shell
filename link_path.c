@@ -10,9 +10,18 @@ list_t *link_path(void)
 	char *dir;
 	list_t *head;
 	list_t *add_result;
+	char *copy_src;
 
+	to_link = malloc(sizeof(char) * BUFSIZE);
+	if (to_link == NULL)
+	{
+		perror("Unable to malloc space for to_link");
+		return (NULL);
+	}
 	head = NULL;
-	to_link = _getenv("PATH");
+	copy_src = _getenv("PATH");
+	to_link = _strcpy(to_link, copy_src);
+/*	printf("to_link: %s\n", to_link);*/
 	if (to_link == NULL)
 	{
 		perror("Unable to link path\n"); return (NULL);

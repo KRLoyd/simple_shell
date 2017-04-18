@@ -21,8 +21,8 @@ char *_strcat(char *dest, char *src)
 
 /**
  * _strcmp - compare two strings
- * @s1: first string
- * @s2: second string
+ * @s1: first string, ends in '\0'
+ * @s2: second string, ends in '\n'
  *
  * Return: negative if s1 < s2, positive if s1 > s2, 0 if s1 = s2
  */
@@ -50,8 +50,20 @@ char *_strcpy(char *dest, char *src)
 	unsigned int i, len;
 
 	len = strlen_rec(src);
+	if (len >= BUFSIZE)
+	{
+		free(dest);
+		dest = malloc(sizeof(char) * (BUFSIZE * 2));
+		if (dest == NULL)
+		{
+			perror("Unable to malloc space for dest");
+			return (NULL);
+		}
+	}
 	for (i = 0; i < len; i++)
+	{
 		dest[i] = src[i];
+	}
 	dest[len] = '\0';
 	return ((char *)dest);
 }
@@ -86,6 +98,8 @@ int strlen_rec(char *s)
 {
 	unsigned int i;
 
+	if (s == NULL)
+		return (0);
 	if (*s == '\0')
 		return (0);
 	i = (strlen_rec(s + 1));

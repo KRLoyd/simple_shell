@@ -13,7 +13,7 @@ char **tokenizer(char *s)
 	char *delim;
 
 	i = 0;
-	delim = " \t\n\r";
+	delim = " \t\n\r\"";
 
 	av = malloc(sizeof(char) * BUFSIZE);
 	if (av == NULL)
