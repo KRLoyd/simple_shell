@@ -1,15 +1,35 @@
 .TH man 1 "APR 15  2017" "1.0" "Holberton Simple Shell Project"
 .SH NAME
-- Simple_shell(hsh) -
+- Simple_shell(hsh) - command line interpreter
 
 .SH SYNOPSIS
-.B ./hsh or ... [command][argument...]
+.B hsh [file [arg...]]
 
 .SH DESCRIPTION
-Simple Shell is a simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.
-.SH EXIT STATUS
+Simple Shell is a basic imitation of a command line interpreter that reads and implements basic commands from user input as a shell would. The shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands. Simple Shell is compiled on Ubuntu 14.04 LTS with gcc 4.8.4 (C90). It is built to run in both interactive and noninteractive mode.
+
+.SH SIMPLE COMMANDS
+ If a simple command has been recognized, the shell performs the following actions:
+.IP 1.
+.IP 2.
+.IP 3.
+
+.SH SEARCH AND EXECUTION
+There are three types of commands: shell functions, built-in commands, and normal programs. The command is searched for (by name) in that order. The three types of commands are all executed in a different way.
+
+.SH PATH SEARCH
+When locating a command, the shell first looks to see if it has a shell function by that name. Then it looks for a built-in command by that name. If a built-in command is not found, one of two things happen:
+.IP 1.
+.IP 2.
+
+.SH BUILTINS
+.IP env
+Prints out all environment variables
+.IP exit
+Exits process and frees memory allocated.
 
 .SH BUGS
+Memory leakage in ---
 
 .SH AUTHORS
 .B Kristen Loyd, Jennifer Huang.
