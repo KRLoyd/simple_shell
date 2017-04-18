@@ -9,7 +9,7 @@ int main(void)
 	char *user_input;
 	size_t input_size;
 	struct stat stats;
-	int get_res, non;
+	int get_res, non, builtin_res;
 	char **args;
 	char *search_res;
 	list_t *linked_path;
@@ -19,12 +19,12 @@ int main(void)
 	search_res = NULL;
 	non = -1;
 /* create linked list from PATH */
-		linked_path = link_path();
-		if (linked_path == NULL)
-		{
-			perror("Unable to create linked list from PATH");
-			return (-1);
-		}
+	linked_path = link_path();
+	if (linked_path == NULL)
+	{
+		perror("Unable to create linked list from PATH");
+		return (-1);
+	}
 /* check status of mode */
 	if (fstat(STDIN_FILENO, &stats) == -1)
 	{
@@ -47,18 +47,23 @@ int main(void)
 /* split user_input into an array */
 		{
 			args = tokenizer(user_input);
+/* check if user_input is a builtin */
+			builtin_res = search_builtins(args[0]);
 /* search for args[0] in PATH */
-			search_res = search_path(args[0], linked_path);
-			if (search_res == NULL)
+			if (builtin_res == -1)
 			{
-				perror("Unable to search PATH");
-				return (-1);
-			}
+				search_res = search_path(args[0], linked_path);
+				if (search_res == NULL)
+				{
+					perror("Unable to search PATH");
+					return (-1);
+				}
 /* Execute search_res */
-			execution(search_res, args);
+				execution(search_res, args);
 /* free search_res and args */
 			if (_strcmp(search_res, user_input) != 0)
 				free(search_res);
+			}
 			free(args);
 /* if interactive mode, print prompt again */
 			if (non == -1)

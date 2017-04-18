@@ -1,4 +1,4 @@
-fck#include "shell.h"
+#include "shell.h"
 /**
  * search_builtins - search for builtins from user input
  * @str: name of builtin for which to search
@@ -10,9 +10,7 @@ int search_builtins(char *str)
 
 	builtins_t builtins[] = {
 		{"env", _env },
-		{"exit", },
-		{},
-		{},
+		{"exit", execute_exit},
 		{NULL, NULL},
 	};
 
@@ -20,7 +18,7 @@ int search_builtins(char *str)
 
 	while (builtins[i].s != NULL)
 	{
-		if (_strncmp(str[0], list[i].s) == 0)
+		if (_strncmp(str, builtins[i].s, strlen_rec(str)) == 0)
 		{
 			builtins[i].fcn(str);
 			return (0);
@@ -34,22 +32,27 @@ int search_builtins(char *str)
 /**
  * _env - prints environment variable
  * @environ: array of pointers to  environment variables
- * Return: 0 on SUCCESS, -1 on FAILURE
+ * Return: Always 0
  */
-int _env(env_t **environ)
+int _env(void)
 {
-	env_t *env;
+	unsigned int i;
 
-	env = *environ;
-	if (env == NULL)
-	{ _putstring("Error printing environment variables\n");
-		return (-1);
-	}
-	while (env != NULL)
+	i = 0;
+	while (environ[i] != NULL)
 	{
-		_putstring("%s\n", *env);
-		env++;
+		putstring(environ[i]);
+		_putchar('\n');
+		i++;
 	}
-
 	return (0);
+}
+
+/**
+ * execute_exit - function to exit with a status
+ */
+
+int execute_exit(void)
+{
+	exit(0);
 }
