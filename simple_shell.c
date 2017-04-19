@@ -20,17 +20,12 @@ int main(void)
 	non = -1;
 /* create linked list from PATH */
 	linked_path = link_path();
-	if (linked_path == NULL)
-	{
-		perror("Unable to create linked list from PATH");
-		return (-1);
-	}
+
+	null_check(linked_path);
+
 /* check status of mode */
-	if (fstat(STDIN_FILENO, &stats) == -1)
-	{
-		perror("fstat Error:\n");
-		exit(EXIT_FAILURE);
-	}
+	_check(fstat(STDIN_FILENO, &stats));
+
 /* check if in non-interactive mode */
 	if ((stats.st_mode & S_IFMT) == S_IFIFO)
 		non = 0;
@@ -77,4 +72,40 @@ int main(void)
 	free(user_input);
 	free_linked_path(linked_path);
 	return (0);
+}
+
+/**
+ * null_check - check if list_t list is null
+ * @s: list to check
+ * Return: -1
+ */
+int null_check(list_t *s)
+{
+	if (s == NULL)
+		perror("Unable to create linked list from PATH");
+	return (-1);
+}
+
+/**
+ * _check - check status mode for fstat
+ * @s: int (return value of fstat) to be checked
+ * Return: EXIT_FAILURE
+ */
+int _check(int s)
+{
+	if (s == -1)
+		perror("fstat Error:\n");
+	exit(EXIT_FAILURE);
+}
+
+/**
+ * search_res_null - check null condition for search_res
+ * @s: (search_res) to be checked
+ * Return: -1
+ */
+int search_res_null(char *s)
+{
+	if (s == NULL)
+		perror("Unable to search PATH");
+	return (-1);
 }
