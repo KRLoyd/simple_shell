@@ -44,6 +44,7 @@ void free_linked_path(list_t *list);
 char *_getenv(const char *name);
 list_t *link_env(void);
 list_t *link_path(void);
+int null_check(list_t *s);
 int _putchar(char c);
 void putstring(char *str);
 int search_builtins(char *str);

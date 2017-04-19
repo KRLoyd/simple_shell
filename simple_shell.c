@@ -20,11 +20,7 @@ int main(void)
 	non = -1;
 /* create linked list from PATH */
 	linked_path = link_path();
-	if (linked_path == NULL)
-	{
-		perror("Unable to create linked list from PATH");
-		return (-1);
-	}
+	null_check(linked_path);
 /* check status of mode */
 	if (fstat(STDIN_FILENO, &stats) == -1)
 	{
@@ -77,4 +73,17 @@ int main(void)
 	free(user_input);
 	free_linked_path(linked_path);
 	return (0);
+}
+
+/**
+ * null_check - check if list_t list is NULL
+ * @s: list to check
+ *
+ * Return: -1
+ */
+int null_check(list_t *s)
+{
+	if (s == NULL)
+		perror("Unable to create linked list from PATH");
+	return (-1);
 }
