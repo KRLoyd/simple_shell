@@ -22,6 +22,7 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
+
 /**
  * struct builtins_s - struct for builtins
  * @s: pointer to user-inputed commands
@@ -32,7 +33,14 @@ typedef struct builtins_s
 	char *s;
 	int (*fcn)();
 } builtins_t;
+
 extern char **environ;
+
+/* error checks for simple_shell */
+int search_res_null(char *s)
+int null_check(list_t *s);
+int _check(int s);
+
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
 char **copy_env(char **env_copy, unsigned int env_len);
