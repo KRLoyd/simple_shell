@@ -1,5 +1,5 @@
 
-# Simple Shell Project for <a href="https://www.holbertonschool.com/">Holberto School</a>
+# Simple Shell Project for <a href="https://www.holbertonschool.com/">Holberton School</a>
 A simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.  
 
 ## Installation
@@ -55,6 +55,8 @@ wait (man 2 wait)
 [simple_shell](simple_shell.c) - simple shell program that 1) checks if in interactice/noninteractice mode 2) prints prompt and waits for user input 3) splits user input into an array 4) prints prompt again if in interactice mode
 
 [execution](execution.c) - executes the command passed as a string
+
+[man_1_simple_shell](man_1_simple_shell) - man page for our shell
 
 **PATH**
 - [search_path](search_path.c) - looks for files in the current PATH. Returns file path on success, NULL on failure
