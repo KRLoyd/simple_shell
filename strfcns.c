@@ -49,8 +49,8 @@ char *_strcpy(char *dest, char *src)
 {
 	unsigned int i, len;
 
-	len = strlen_rec(src);
-	if (len >= BUFSIZE)
+	len = strlen_rec(src) + 1;
+	if (len >= (BUFSIZE - 2))
 	{
 		free(dest);
 		dest = malloc(sizeof(char) * (BUFSIZE * 2));
@@ -60,11 +60,11 @@ char *_strcpy(char *dest, char *src)
 			return (NULL);
 		}
 	}
-	for (i = 0; i < len; i++)
+	for (i = 0; i < len - 1; i++)
 	{
 		dest[i] = src[i];
 	}
-	dest[len] = '\0';
+	dest[len - 1] = '\0';
 	return ((char *)dest);
 }
 
