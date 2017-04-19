@@ -31,16 +31,32 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
+/**
+ * struct builtins_s - struct for builtins
+ * @s: pointer to user-inputed commands
+ * @fcn: pointer to corresponding command function
+ 
+ */
+typedef struct builtins_s
+{
+	char *s;
+	int (*fcn)();
+} builtins_t;
 extern char **environ;
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
+char **copy_env(char **env_copy, unsigned int env_len);
+int _env(void);
+int execute_exit(void);
 void execution(char *str, char **args);
-void free_dblpt_char(char **to_free);
+void free_dblptr(char **array, unsigned int len);
 void free_linked_path(list_t *list);
 char *_getenv(const char *name);
+list_t *link_env(void);
 list_t *link_path(void);
 int _putchar(char c);
 void putstring(char *str);
+int search_builtins(char *str);
 char *search_path(char *str, list_t *list);
 char *_strcat(char *dest, char *src);
 char *_strcpy(char *dest, char *src);
