@@ -45,8 +45,7 @@ char *_getenv(const char *name)
 		}
 		i++;
 	}
-	free_dblptr(env_copy, env_len);
-	return (NULL);
+	free_dblptr(env_copy, env_len); return (NULL);
 }
 
 /**
