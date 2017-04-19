@@ -6,19 +6,10 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
-<<<<<<< HEAD
-#define ENV extern char **environ
-=======
 #include <sys/wait.h>
->>>>>>> 8f206bd1d9ac75f0792bdac2aafd6605e3ece02b
 #define PROMPT "($) "
 #define PRSIZE strlen_rec(PROMPT)
 #define BUFSIZE 1024
-<<<<<<< HEAD
-
-extern char **environ;
-=======
->>>>>>> 8f206bd1d9ac75f0792bdac2aafd6605e3ece02b
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -35,7 +26,6 @@ typedef struct list_s
  * struct builtins_s - struct for builtins
  * @s: pointer to user-inputed commands
  * @fcn: pointer to corresponding command function
- 
  */
 typedef struct builtins_s
 {
