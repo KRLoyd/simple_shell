@@ -9,7 +9,7 @@ int main(void)
 	char *user_input;
 	size_t input_size;
 	struct stat stats;
-	int get_res, non, builtin_res;
+	int non, builtin_res;
 	char **args;
 	char *search_res;
 	list_t *linked_path;
@@ -37,9 +37,10 @@ int main(void)
 /* if interactive mode, print prompt*/
 	if (non == -1)
 		write(STDOUT_FILENO, PROMPT, PRSIZE);
+
 /* START OF INFINITE LOOP */
 /*get user input */
-	while ((get_res = getline(&user_input, &input_size, stdin)) != -1)
+	while (getline(&user_input, &input_size, stdin) != -1)
 	{
 		if (_strncmp(user_input, "\n", 1) == 0)
 			write(STDOUT_FILENO, PROMPT, PRSIZE);
@@ -65,11 +66,13 @@ int main(void)
 				free(search_res);
 			}
 			free(args);
+
 /* if interactive mode, print prompt again */
 			if (non == -1)
 				write(STDOUT_FILENO, PROMPT, PRSIZE);
 		}
-	}
+
+	} /* END OF INTINITE LOOP */
 /*free user_input and linked_path */
 	free(user_input);
 	free_linked_path(linked_path);
