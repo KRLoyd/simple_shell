@@ -10,12 +10,21 @@ list_t *link_path(void)
 	char *dir;
 	list_t *head;
 	list_t *add_result;
+	char *copy_src;
 
-	head = NULL;
-	to_link = _getenv("PATH");
+	to_link = malloc(sizeof(char) * BUFSIZE);
 	if (to_link == NULL)
 	{
-		putstring("Unable to link path\n"); return (NULL);
+		perror("Unable to malloc space for to_link");
+		return (NULL);
+	}
+	head = NULL;
+	copy_src = _getenv("PATH");
+	to_link = _strcpy(to_link, copy_src);
+/*	printf("to_link: %s\n", to_link);*/
+	if (to_link == NULL)
+	{
+		perror("Unable to link path\n"); return (NULL);
 	}
 	dir = strtok(to_link, ":");
 	while (to_link != NULL)
@@ -27,7 +36,7 @@ list_t *link_path(void)
 			add_result = add_node_end(&head, dir);
 			if (add_result == NULL)
 			{
-				putstring("Unable to add node\n"); return (NULL);
+				perror("Unable to add node\n"); return (NULL);
 			}
 		}
 		dir = strtok(NULL, ":");

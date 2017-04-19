@@ -1,6 +1,9 @@
 # Ignore all
 *
 
+# Unignore man_1_simple_shell
+!man_1_simple_shell
+
 # Unignore all with extensions
 !*.*
 
