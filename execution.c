@@ -2,6 +2,7 @@
 /**
  * execution - executes the command passed as a string
  * @str: command to execute
+ * @args: array of argument strings passed to new program
  **/
 void execution(char *str, char **args)
 {

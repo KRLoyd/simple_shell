@@ -31,7 +31,6 @@ int search_builtins(char *str)
 
 /**
  * _env - prints environment variable
- * @environ: array of pointers to  environment variables
  * Return: Always 0
  */
 int _env(void)
@@ -50,6 +49,7 @@ int _env(void)
 
 /**
  * execute_exit - function to exit with a status
+ * Return: 0
  */
 
 int execute_exit(void)

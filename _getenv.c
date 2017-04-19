@@ -2,10 +2,8 @@
 /**
  * _getenv - get an environment variable
  * @name: environment variable to look for
- *
  * Return: pointer to the variable (SUCCESS), NULL (FAILURE)
  */
-extern char **environ;
 char *_getenv(const char *name)
 {
 	char **env_copy;
@@ -47,8 +45,7 @@ char *_getenv(const char *name)
 		}
 		i++;
 	}
-	free_dblptr(env_copy, env_len);
-	return (NULL);
+	free_dblptr(env_copy, env_len); return (NULL);
 }
 
 /**

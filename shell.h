@@ -26,7 +26,6 @@ typedef struct list_s
  * struct builtins_s - struct for builtins
  * @s: pointer to user-inputed commands
  * @fcn: pointer to corresponding command function
- 
  */
 typedef struct builtins_s
 {

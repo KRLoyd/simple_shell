@@ -13,9 +13,8 @@ char *search_path(char *str, list_t *list)
 
 	liststr = malloc(sizeof(char) * BUFSIZE);
 	if (liststr == NULL)
-	{
 		perror("liststr malloc\n"); return (NULL);
-	}
+
 	while (list != NULL)
 	{
 		clear_buff(liststr);
