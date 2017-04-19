@@ -36,10 +36,11 @@ typedef struct builtins_s
 extern char **environ;
 list_t *add_node_end(list_t **head, char *str);
 void clear_buff(char *buffer);
+char **copy_env(char **env_copy, unsigned int env_len);
 int _env(void);
 int execute_exit(void);
 void execution(char *str, char **args);
-void free_dblpt_char(char **to_free);
+void free_dblptr(char **array, unsigned int len);
 void free_linked_path(list_t *list);
 char *_getenv(const char *name);
 list_t *link_env(void);
