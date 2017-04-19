@@ -1,4 +1,4 @@
-# Simple Shell Project for <a href="https://www.holbertonschool.com/">Holberton School</a>
+# Simple <a href="https://www.holbertonschool.com/">Holberton</a> Shell
 A simple UNIX command line interpreter that reads and implements basic commands from user input. Simple Shell project requires students to build a simple shell with a restriction of allowed functions. We use our knowledge in C so far to implement and create functions and programs necessary to build a working simple shell.  
 
 ## Installation
