@@ -35,7 +35,7 @@ list_t *link_path(void)
 			add_result = add_node_end(&head, dir);
 			if (add_result == NULL)
 			{
-				perror("Unable to add node\n"); free(copy_src);return (NULL);
+				perror("Unable to add node\n"); free(copy_src); return (NULL);
 			}
 		}
 		dir = strtok(NULL, ":\n");
