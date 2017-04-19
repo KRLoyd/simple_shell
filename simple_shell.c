@@ -9,7 +9,7 @@ int main(void)
 	char *user_input;
 	size_t input_size;
 	struct stat stats;
-	int get_res, non, builtin_res;
+	int non, builtin_res;
 	char **args;
 	char *search_res;
 	list_t *linked_path;
