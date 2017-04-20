@@ -1,6 +1,5 @@
-
 # Simple Shell Project for <a href="https://www.holbertonschool.com/">Holberton School</a>
-A simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.  
+A simple UNIX command line interpreter(in **C** ) that reads and implements basic commands from user input.
 
 ## Installation
 All files compiled on Ubuntu 14.04 LTS with `gcc 4.8.4`
