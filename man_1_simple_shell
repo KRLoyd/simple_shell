@@ -3,15 +3,15 @@
     hsh - Holberton Simple Shell: command line interpreter
 .PP
 .SH SYNOPSIS
-.B hsh 
+.B hsh
 [command_string [arg...][file]]
 .PP
 .SH COPYRIGHT
     Public Domain, no copyright protection
 .PP
 .SH DESCRIPTION
-.B hsh 
-is a basic imitation of a command line interpreter that reads and implements basic commands from user input as a shell would. 
+.B hsh
+is a basic imitation of a command line interpreter that reads and implements basic commands from user input as a shell would.
 .PP
 .B hsh
  is compiled on Ubuntu 14.04 LTS with gcc 4.8.4 (C90). It is built to run in both interactive and noninteractive mode.
@@ -48,5 +48,5 @@ Kristen Loyd <loydkristen@gmail.com>
 Jennifer Huang <133@holbertonschool.com>
 .PP
 .SH SEE ALSO
-.BR man 
+.BR man
 .BR sh
