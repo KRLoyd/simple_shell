@@ -67,19 +67,22 @@ _exit (man 2 _exit)
 - [free_linked_path](free_linked_path.c) - frees the linked path
 
 **BUILTINS**
-[search_builtins](search_builtins.c) - searchs for builtins from user input
+[search_builtins](search_builtins.c) - searchs for builtins from user input <br />
 - `_env` - prints environment variable
 - `execute_exit` - exits function
 
 **HELPER FUNCTIONS**
+- [_getenv](_getenv.c) - get an environment variable. Returns pointer to the variable <br />
+- `copy_env` - copies environment variable. Returns double pointer to copy of environment variable
+- [free_dblptr](free_dblptr.c) - frees a double pointer
 - [add_node_end](add_node_end.c) - adds a new node at the end of a list_t list. Returns pointer to added node, or NULL
 - [clear_buff](clear_buff.c) - sets buffer to '\0'
 - [_putchar](_putchar.c) - writes character to stdout
 - [putctring](putstring.c) - prints a string
-- [strfcns](strfcns.c) - helper string functions:
-  `_strcat` - concatenates two strings. Returns pointer to resulting string.
-  `_strcmp` - compares two strings. Returns (-) if s1 < s2, (0) if s1 > s2, 0 if s1 = s2
-  `_strcpy` - copies string from src to dest. Returns pointer to dest
-  `_strncmp` - compares two character strings up to n bytes. Return 0-success, -1-failure
-  `strlen_rec` - finds and returns length of a string.
+- [strfcns](strfcns.c) - helper string functions: <br />
+  `_strcat` - concatenates two strings. Returns pointer to resulting string <br />
+  `_strcmp` - compares two strings. Returns (-) if s1 < s2, (0) if s1 > s2, 0 if s1 = s2 <br />
+  `_strcpy` - copies string from src to dest. Returns pointer to dest <br />
+  `_strncmp` - compares two character strings up to n bytes. Return 0-success, -1-failure <br />
+  `strlen_rec` - finds and returns length of a string <br />
 - [tokenizer](tokenizer.c) - splits a character string into an array of tokens
